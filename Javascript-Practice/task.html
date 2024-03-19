@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        class operators
+        {
+            Operator;
+            print()
+            {
+                document.write(`
+                <div class='p-3 bg-dark text-light' style='width:300px;'>Operator : <b>${this.Operator}</b></div>
+                `)
+            }
+        }
+        class Addition extends operators
+        {
+           
+            Operator = "Addition";
+            print(Num1,Num2){
+                super.print();
+                document.write(`
+                <div class='p-3 bg-dark text-light' style='width:300px;'>Operator : <b>${Num1 + Num2}</b></div>`);
+   
+            }
+        }
+        class Substraction extends operators
+        {
+            Output = parseInt(this.FirstNumber) - parseInt(this.SecondNumber);
+            Operator = "Substraction";
+            print(Num1,Num2)
+            {
+                super.print();
+                document.write(`
+                <div class='p-3 bg-dark text-light' style='width:300px;'>Operator : <b>${Num1 - Num2}</b></div>`);
+            }
+        }
+        class Multiplication extends operators
+        {
+            Output = parseInt(this.FirstNumber) * parseInt(this.SecondNumber);
+            Operator = "Multiplication";
+            print(Num1,Num2)
+            {
+                super.print();
+                document.write(`
+                <div class='p-3 bg-dark text-light' style='width:300px;'>Operator : <b>${Num1 * Num2}</b></div>`);
+            }
+        }
+        class Division extends operators
+        {
+            Output = parseInt(this.FirstNumber) / parseInt(this.SecondNumber);
+            Operator = "Division";
+            print(Num1,Num2)
+            {
+                super.print();
+                document.write(`
+                <div class='p-3 bg-dark text-light' style='width:300px;'>Operator : <b>${Num1 / Num2}</b></div>`);
+            }
+        }
+        let calculation = [new Addition(),new Substraction(),new Multiplication(),new Division()];
+        operatorType = prompt("Enter Operator","Addition|Substraction|Multiplication|Division")
+        for(var AriOperator of calculation){
+            if(AriOperator.Operator===operatorType){
+                AriOperator.print(parseInt(prompt("Enter First Number")),parseInt(prompt("Enter Second Number")));
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

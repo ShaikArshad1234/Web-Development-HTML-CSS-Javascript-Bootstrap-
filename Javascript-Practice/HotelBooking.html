@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Registeration Form</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+       .nav-item {
+            font-weight: bold;
+            font-size:20px;
+           
+        }
+        .nav-item a:visited {
+            color:black;
+        }
+        .nav-tabs {
+            display:flex;
+            justify-content: space-around;
+        }
+        .customer-card {
+            display:grid;
+            grid-template-columns: 6fr 6fr;
+        }
+        img {
+            border-radius:10px;
+        }
+        .amount-card {
+            display:grid;
+            grid-template-columns: 6fr 6fr;
+        }
+        #resultBtn {
+            border:none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+    <script type="text/javascript">
+        function RegisterClick(){
+            var numberOfDays = document.getElementById("numberDays").value;
+            var numberOfPersons = document.getElementById("numberPersons").value;
+            var Amount = document.getElementById("Amount").value;
+            document.getElementById("lblName").innerHTML = document.getElementById("txtName").value;
+            document.getElementById("lblDate").innerHTML = document.getElementById("txtDate").value;
+            document.getElementById("lblDays").innerHTML = numberOfDays;
+            document.getElementById("lblPersons").innerHTML = numberOfPersons;
+            document.getElementById("lblAmount").innerHTML = Amount;
+            var roomType = "";
+            var amenities = "";
+            var roomCost = 0;
+            var total = 0;
+            var amenitiesCost = 0;
+            var balanceAmount = 0;
+            var imgDeluxRoom = document.getElementById("deluxRoom")
+            var imgSuiteRoom = document.getElementById("suiteRoom")
+            if(imgDeluxRoom.checked){
+                console.log(imgDeluxRoom.value)
+                roomType = imgDeluxRoom.value;
+                roomCost = 2500;
+           
+            }
+            if(imgSuiteRoom.checked){
+                roomType = imgSuiteRoom.value;
+                roomCost = 4000;
+            }
+            document.getElementById("lblRoomType").innerHTML = roomType;
+            var acRoom = document.getElementById("AC");
+            var lockerRoom = document.getElementById("Locker");
+            if(acRoom.checked){
+                amenities += acRoom.value + "<br>"
+                amenitiesCost = 1000;
+                roomCost += amenitiesCost
+                console.log(roomCost);
+               
+            }
+            if(lockerRoom.checked){
+                amenities += lockerRoom.value + "<br>";
+                amenitiesCost = 300;
+                roomCost += amenitiesCost
+            }
+
+            document.getElementById("lblAmenities").innerHTML = amenities;
+            if(numberOfPersons>2){
+                total += (roomCost * numberOfDays) + (numberOfPersons * 1000);
+                balanceAmount = total - Amount;
+                console.log(total);
+                console.log(balanceAmount)
+            }else {
+                total += (roomCost* numberOfDays * numberOfPersons);
+                console.log(total);
+                balanceAmount = total - Amount;
+                console.log(typeof total)
+                console.log(balanceAmount)
+            }
+            document.getElementById("lblBalance").innerHTML = balanceAmount;
+
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <h2 class="text-center mt-2">Hotel Registeration Form</h2>
+    <div>
+        <ul class="nav nav-tabs mt-5">
+            <li class="nav-item"><a href="#customerDetails" data-bs-toggle="tab" class="nav-link active">Customer Info</a></li>
+            <li class="nav-item"><a href="#roomType" data-bs-toggle="tab" class="nav-link ">Room Type</a></li>
+            <li class="nav-item"><a href="#amenities" data-bs-toggle="tab" class="nav-link">Amenities</a></li>
+            <li class="nav-item"><a href="#advanceAmount" data-bs-toggle="tab" class="nav-link">Advance Amount</a></li>
+            <li class="nav-item">
+                <button class="btn" id="resultBtn" onclick="RegisterClick()">
+                    <a href="#summary" data-bs-toggle="tab" class="nav-link">Summary</a>
+                </button>
+            </li>
+        </ul>
+        <div class="tab-content mt-4 p-4">
+            <div class="tab-pane active" id="customerDetails">
+                <div>
+                    <dl class="row customer-card">
+                        <dt>Customer Name</dt>
+                        <dd><input type="text" id="txtName" class="form-control"></dd>
+                        <dt>Check in Date</dt>
+                        <dd><input type="date" id="txtDate" class="form-control"></dd>
+                        <dt>Total No of Days</dt>
+                        <dd><input type="number" id="numberDays" class="form-control"></dd>
+                        <dt>Total No of Persons</dt>
+                        <dd><input type="number" id="numberPersons" class="form-control"></dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="tab-pane" id="roomType">
+                <div class="row">
+                    <div class="col text-center">
+                        <img src="../public/images/Delux.jpeg" width="200" height="200">
+                        <div class="mt-3 h4">
+                            <input type="radio" name="roomsTypes" id="deluxRoom" value="Delux Room" class="form-check-input"> <span>Delux Room</span>
+                        </div>
+                    </div>
+                    <div class="col text-center">
+                        <img src="../public/images/Suite.jpeg" width="200" height="200">
+                        <div class="mt-3 h4">
+                            <input type="radio" name="roomsTypes" id="suiteRoom" value="Suite Room" class="form-check-input"> <span>Suite Room</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="amenities">
+                <div class="row">
+                    <div class="col text-center">
+                        <img src="../public/images/AcRoom.jpeg" width="200" height="200">
+                        <div class="mt-3 h4">
+                            <input type="checkbox" id="AC" value="AC" class="form-check-input"> <span>A/C</span>
+                        </div>
+                    </div>
+                    <div class="col text-center">
+                        <img src="../public/images/LockerRoom.jpeg" width="200" height="200">
+                        <div class="mt-3 h4">
+                            <input type="checkbox" id="Locker" value="Locker" class="form-check-input"> <span>Locker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="advanceAmount" class="text-center">
+                <dl class="d-flex justify-content-center">
+                    <dt class="h3 me-5">Advance Amount</dt>
+                    <dd><input type="number" id="Amount" class="form-control"></dd>
+                </dl>
+            </div>
+            <div class="tab-pane" id="summary">
+                <div>
+                    <dl>
+                        <dt>Customer Name</dt>
+                        <dd id="lblName"></dd>
+                        <dt>Check in Date</dt>
+                        <dd id="lblDate"></dd>
+                        <dt>Total No of Days</dt>
+                        <dd id="lblDays"></dd>
+                        <dt>Total No of Persons</dt>
+                        <dd id="lblPersons"></dd>
+                        <dt>Room Type</dt>
+                        <dd id="lblRoomType"></dd>
+                        <dt>Amenities</dt>
+                        <dd id="lblAmenities"></dd>
+                        <dt>Advanced Amount</dt>
+                        <dd id="lblAmount"></dd>
+                        <dt>Balance Amount</dt>
+                        <dd id="lblBalance"></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

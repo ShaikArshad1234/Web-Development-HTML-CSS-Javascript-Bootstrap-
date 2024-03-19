@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            overflow: hidden;
+            display: flex;
+        }
+        @keyframes slide {
+            from{
+                margin-left:150;
+            }
+            50% {
+                margin-left: 0%;
+            }
+            to {
+                margin-left: -110%;
+            }
+        }
+        .slide1 {
+            animation-name: slide;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        
+    </style>
+</head>
+<body>
+    <img class="slide1" wigth="100%" src="../Public/Images/slide1.jpg">
+    <img class="slide2" width="100%" src="../Public/Images/slide2.jpg">
+</body>
+</html>

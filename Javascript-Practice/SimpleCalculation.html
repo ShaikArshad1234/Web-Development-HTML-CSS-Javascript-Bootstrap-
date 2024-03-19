@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculation</title>
+    <link ref="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link ref="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function submitClick() {
+            var num1=parseFloat(document.getElementById("number1").value);
+            var num2=parseFloat(document.getElementById("Number2").value);
+            var select=document.getElementById("selectOpt").value;
+            var result=document.getElementById("Result");
+            var answer="";
+            switch(select)
+            {
+                case "Addition":
+                answer = num1 + num2;
+                result.innerHTML = `Result:${answer}`;
+                break;
+                case "Subtraction":
+                answer = num1 - num2;
+                result.innerHTML = `Result:${answer}`;
+                break;
+                case "Multiplication":
+                answer = num1 * num2;
+                result.innerHTML = `Result:${answer}`;
+                break;
+                case "Division":
+                answer = num1 / num2;
+                result.innerHTML = `Result:${answer}`;
+                break;
+                default:
+                result.innerHTML = `Please select one option`;
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="card">
+        <div class="card-header" style="text-align:center">Simple Calculation
+            <div style="padding:20px;"> Number-1
+                <input type="text" placeholder="enter a number" id="Number1">
+            </div>
+            <div style="padding:20px;"> Number-2
+                <input type="text" placeholder="enter a number" id="Number2">
+            </div>
+            <div style="padding:20px;">Operations
+                <select id="selectOpt">
+                    <option>Select</option>
+                    <option value="Addition">Addition</option>
+                    <option vlaue="Subtarction">Subtraction</option>
+                    <option value="Multiplication">Multiplication</option>
+                    <option vlaue="Division">Division</option>
+                </select>
+            </div>
+            <button type="button" id="Submit" onclick="sumbitClick()" class="btn btn-info mt-3">Submit</button>
+            <div>
+                <h4 class="p-2" id="Result"></h4>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

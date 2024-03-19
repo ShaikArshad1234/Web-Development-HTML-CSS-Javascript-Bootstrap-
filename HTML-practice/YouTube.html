@@ -1,0 +1,201 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>YouTube-NareshIT</title>
+        <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <style>
+            header {
+                font-size:25px;
+                display:flex;
+                justify-content: space-between;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .search-bar {
+                color:gray;
+                font-size:20px;
+                border:1px solid gray;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 5px;
+                width:400px;
+                border-radius:30px;
+                display: flex;
+                justify-content: space-between;
+            }
+            .Profile-pic {
+                border-radius:30px;
+                border:1px solid black;
+            }
+            .shortcut-buttons span {
+                margin-right: 20px;
+            }
+            .search-area {
+                display: flex;
+            }
+            .bi-mic-fill {
+                margin-left: 20px;
+            }
+            section {
+                display: grid;
+                grid-template-columns: 1fr 11fr;
+                margin-top: 20px;
+            }
+            .nav-item {
+                font-size: 25px;
+                margin-bottom: 40px;
+                margin-top: 20px;
+                text-align: center;
+            }
+            .nav-item span {
+                font-size: 15px;
+            }
+            article {
+                margin-top: 20px;
+                font-family: 20px;
+                display: grid;
+                grid-template-columns: 10fr 2fr;
+            }
+            .title {
+                font-size:25px;
+                margin-bottom:20px;
+                margin-top:5px;
+            }
+            .sub-title {
+                font-size: 15px;
+                margin-bottom: 20px;
+            }
+            .Subscribe {
+                padding: 5px;
+                background-color: black;
+                width: 120px;
+                border-radius: 10px;
+                color: white;
+            }
+            .text {
+                margin-bottom: 10px;
+            }
+            a {
+                text-decoration:none;
+            }
+            .Categories {
+                padding: 20px;
+                font-family: Arial;
+                font-size: 17px;
+                font-weight: bold;
+                display: flex;
+                justify-content: space-between;
+                color: gray;
+                text-transform: uppercase;
+            }
+            .video {
+                padding: 20px;
+                font-family: Arial;
+                font-size: 20px;
+            }
+            .thumbnails {
+                display: grid;
+                grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+            }
+            iframe {
+                width: 220px;
+                height: 130px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div>
+                <span class="bi bi-justify"></span>
+                <img src="public/images/YouTube-logo.jpg" width="100">
+            </div>
+            <div class="search-area">
+                <div class="search-bar">
+                    <span>Search</span>
+                    <span class="bi bi-search"></span>
+                </div>
+                <span class="bi bi-mic-fill"></span>
+            </div>
+            <div class="shortcut-bottuns">
+                <span class="bi bi-camera-video"></span>
+                <span class="bi bi-bell-fill"></span>
+                <img class="profile-pic" src="public/Images/Profile-pic.jpg" width="30" height="30">
+            </div>
+        </header>
+        <section>
+            <nav>
+                <div class="nav-item">
+                    <div class="bi bi-house-door"></div>
+                    <span>Home</span>
+                </div>
+                <div class="nav-item">
+                    <div class="bi bi-film"></div>
+                    <span>Shorts</span>
+                </div>
+                <div class="nav-item">
+                    <div class="bi bi-collection-play"></div>
+                    <span>Subscribe</span>
+                </div>
+                <div class="nav-item">
+                    <div class="bi bi-camera-video"></div>
+                    <span>Library</span>
+                </div>
+            </nav>
+            <main>
+                <div>
+                    <img src="public/Images/Channel-banner.jpg" width="100%">
+                </div>
+                <article>
+                    <div>
+                        <img src="public/Images/NIt.jpg" align="left" width="140">
+                        <div class="title">Naresh i Technologies</div>
+                        <div class="sub-title">@NareshIT1.19M subscribers2.8K videos</div>
+                        <div class="text">We are one of the India's largest software training organization and an...</div>
+                        <div><a href="instagram.com/nareshitech">instagram.com/nareshitech</a>and 7 more links</div>
+                    </div>
+                    <div>
+                        <div class="Subscribe">
+                            <span class="bi bi-bell-fill"></span>
+                            <span>Subscribe</span>
+                            <span class="bi bi-chevron-down"></span>
+                        </div>
+                    </div>
+                </article>
+                <div class="Categories">
+                    <span>Home</span>
+                    <span>Videos</span>
+                    <span>Shorts</span>
+                    <span>Live</span>
+                    <span>Playlists</span>
+                    <span>community</span>
+                    <span>Channels</span>
+                    <span>About</span>
+                </div>
+                <div class="Video">
+                    <span>Videos</span>
+                    <span class="bi bi-play-fill"></span>
+                    <span>Play All</span>
+                </div>
+                <div class="thumbnails">
+                    <div>
+                        <iframe src="https://www.youtube.com/watch?v=Ft-v5aLDWqc"></iframe>
+                    </div>
+                    <div>
+                        <iframe src="https://www.youtube.com/watch?v=DeEszXEewHs"></iframe>
+                    </div>
+                    <div>
+                        <iframe src="https://www.youtube.com/watch?v=f5doC5v3Xd8"></iframe>
+                    </div>
+                    <div>
+                        <iframe src="https://www.youtube.com/watch?v=X7RNpVTemHo"></iframe>
+                    </div>
+                    <div>
+                        <iframe src="https://www.youtube.com/watch?v=X7RNpVTemHo"></iframe>
+                    </div>
+                </div>
+            </main>
+        </section>    
+    </body>
+    </html>

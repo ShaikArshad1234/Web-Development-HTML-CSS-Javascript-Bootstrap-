@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image</title>
+    <style>
+        header {
+            font-family: Arial;
+            font-size: 20px;
+            display:flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        nav span {
+            margin-right: 40px;
+            color: grey;
+        }
+        .brand-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: blue;
+        }
+        header button {
+            font-size: 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        .main-title {
+            font-size: 50px;
+            font-family: Arial;
+            margin-left: 100px;
+            margin-top: 50px;
+        }
+        .main-subtitle {
+            font-size: 25px;
+            font-family: Arial;
+            margin-left: 100px;
+            margin-top: 20px;
+            line-height: 40px;
+        }
+        .btn-buttons {
+            margin-left: 100px;
+            margin-top: 50px;
+        }
+        .btn-pages {
+            background-color: blue;
+            color: white;
+        }
+        .btn-doc {
+            background-color: whitesmoke;
+        }
+    </style>
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+        <div>
+            <span class="brand-title">LandKit.</span>
+        </div>
+        <div>
+            <nav>
+                <span>Landings</span>
+                <span>Pages</span>
+                <span>Accounts</span>
+                <span>documentation</span>
+            </nav>
+        </div>
+        <div>
+            <button>
+                Buy now
+            </button>
+        </div>
+    </header>
+    <section>
+        <main>
+            <img src="public/Images/Wings.jpeg" align="right" height="200" width="400">
+            <div>
+                <div class="main-title">
+                    Welcome to LandKit.<br>
+                    Develop anything
+                </div>
+                <div class="main-subtitle">
+                    build a beautiful, modern website with flexible Bootstrap components built from scratch.
+                </div>
+                <div class="main-buttons">
+                    <button class="btn-pages">View Pages<span class="bi bi-arrow-right"></span></button>
+                    <button class="btn-doc">Documentation</button>
+                </div>
+            </div>       
+        </main>
+    </section>   
+</body>
+</html>

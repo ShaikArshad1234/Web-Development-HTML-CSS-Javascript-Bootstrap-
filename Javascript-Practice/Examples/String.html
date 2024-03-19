@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function VerifyOTP() {
+            var otp = document.getElementById("txtOtp").value;
+            var error = document.getElementById("error");
+            if(otp=="3465") {
+                error.innerHTML = "OTP Verified".fontcolor('green').italics();
+            } else {
+                error.innerHTML = "Invalid OTP".fontcolor("red").bold().italics();
+            }
+        }
+        function ChangeCase() {
+            var username = document.getElementById("txtName").value;
+            document.getElementById("txtName").value = username.toUpperCase();
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>User Name</dt>
+        <dd><input type="text" onkeyup="ChangeCase()" id="txtName" placeholder="Block letter only"></dd>
+        <dt>OPT</dt>
+        <dd><input type="text" id="txtOtp" onblur="VerifyOTP()" size="4"></dd>
+        <dd id="error"></dd>
+    </dl>
+</body>
+</html>
