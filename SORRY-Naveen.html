@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naveen ga Sorry raa </title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+            background-color: #ad4482;
+        }
+        .birthdayCard {
+            position: relative;
+            width: 250px;
+            height:350px;
+            cursor: pointer;
+            transform-style: preserve-3d;
+              transform: perspective(2500px);
+            transition: 4s;
+          }
+          .birthdayCard:hover {
+              transform: perspective(2500px) rotate(5deg);
+              box-shadow: inset 100px 20px 100px rgba(0,0,0,.15), 0 10px 100px rgba(0,0,0,0.3);
+          }      
+          .birthdayCard:hover .cardFront {
+            transform: rotateY(-160deg); 
+          }       
+          .birthdayCard:hover .front-text {
+            display: none;
+          }      
+          .birthdayCard:hover .wrap-deco {
+            display: none;
+          }  
+          .birthdayCard:hover .wrap-decoTwo {
+            display: none;
+          }   
+          .birthdayCard:hover .plate {
+            display: none;
+          }
+          .cardFront {
+            position: relative;
+            background-color: #fff;
+            width: 350px;
+            height:450px;
+            overflow: hidden;
+            transform-origin: left;
+            box-shadow: inset 100px 20px 100px rgba(0,0,0,.13), 30px 0 50px rgba(0,0,0,0.1);
+            transition: .4s;
+          }
+          
+          .happy, .toyou {
+            position: relative;
+            font-family: didot;
+            text-align: center;
+            backface-visibility: hidden;
+            font-size: 40px; 
+          }
+          
+          .happy {
+            top:150px;
+          }
+          
+          .toyou {
+            top:60px;
+          }
+          
+          .bday {
+            position: relative;
+            font-family: arial;
+            font-size: 30px;
+            text-align: center;
+            top:110px;
+          }
+          .BEST-FRIEND, .NAVEEN {
+            position: relative;
+            font-family: didot;
+            text-align: center;
+            backface-visibility: hidden;
+            font-size: 40px;
+            top: 30px;
+          }
+          .BEST-FRIEND {
+            top: 20px;
+          }
+          
+          .NAVEEN {
+            top: -10px;
+          }
+          .cardInside {
+            position: absolute;
+            background-color: #fff;
+            width: 350px;
+            height:450px;
+            z-index:-1;
+            left:0;
+            top:0;
+            box-shadow: inset 100px 20px 100px rgba(0,0,0,0.2);
+          }
+          
+          .inside-text {
+            position: relative;
+            top:-160px;
+            transform: scale(0.7);
+          }
+          
+          .wishes {
+            position: relative;
+            top:-180px;
+            margin: 40px;
+            justify-content: flex;
+          }
+          
+          p {
+            font-family:'Times New Roman', cursive;
+            color: #11cbe4;
+          }
+          
+          .name {
+            margin-left:15px;
+            top:-20;
+            color:red;
+          }          
+
+    </style>
+</head>
+<body>
+  <div class="birthdayCard">
+      <div class="cardFront">
+        <div class="front-text">
+              
+                <h3 class="happy">Dear</h3>
+                <h2 class="bday">Friend</h2> 
+                <h3 class="toyou">I am</h3>
+                <h1 class="BEST-FRIEND">very sorry 👨🏻‍🤝‍👨🏻</h1>
+                <h1 class="NAVEEN">NAVEEN</h1>
+            </div>
+            <div class="wrap-deco">
+                <div class="decorations"></div>
+                <div class="decorationsTwo"></div>
+            </div> 
+            <div class="wrap-decoTwo">
+                <div class="decorations"></div>
+                <div class="decorationsThree"></div>
+            </div>
+            <div class="plate">
+                <div class="cake"></div>
+                <div class="flame"></div>
+            </div>
+        </div> 
+        <div class="cardInside">
+            <div class="inside-text">
+                <h3 class="happy">Sorry ra </h3>
+                <h2 class="bday"> Bro</h2> 
+                <h3 class="toyou">NAVEENU</h3>  
+            </div>
+            <div class="wishes">
+                <p>Dear Best Friend,</p>
+                <p>I am accepted all about my faults and mistaken but one humble request don't break our frdship yaar.🚶🏻‍♂️💔🧍🏻‍♂️.</p>
+                <p class="name">NAVEEN, You are my Close Friend forever❣❣💞💓👥. </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
